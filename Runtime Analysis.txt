@@ -1,0 +1,45 @@
+EVALUATION:
+Worst Case Runtimes:
+  Vector:
+    Insert: O(n + m)
+    Remove: O(n + m)
+    Find: QUICKSORT: O(n^2) SELECTIONSORT: O(n^2)
+    Delete: O(n + m)
+    Sort: O(nlog(n))  
+    Advantages: Lots of built-in methods, easy to implement on backend.
+    Disadvantages: Can be slow to search through, each insertion/deletion requires all 
+      elements after the element to be shifted.
+  Hash Table:
+    Insert: O(n)
+    Remove: O(n)
+    Find: O(n)
+    Delete: O(n)
+    Sort: extract entries: O(n) sort entries in vector: O(nlog(n))
+    Advantages: Fast insertion/deletion/searching (can be ϴ(1) in average).
+    Disadvantages: Hash tables are unsorted, so to get a sorted list of courses we would
+      need to extract all data into another data structure like a vector before being able
+      to perform an efficient sort. Collisions can make the table less efficient.
+  Binary Search Tree:
+    Insert: O(n)
+    Remove: O(n)
+    Find: O(n)
+    Delete: O(n)
+    Sort: N/A (is sorted)
+    Advantages: Fast (most operations have ϴ(log(n)) complexity on average). The tree is by
+      nature already sorted, so a sorted list can be output by traversing the tree in the 
+      right way and returning values in order of traversal.
+    Disadvantages: Should be built balanced.
+
+Recommendation:
+	Based on the runtime analysis of the three data-structures, the Binary Search Tree
+      seems like the best choice for storing the course data. Like the hash table, it has
+      a fast worst-case runtime of O(n) for most functions, and an average complexity of 
+      ϴ(log(n)). However, it out-performs the hash-table when data needs to be sorted, 
+      since a hash-table is an unsorted data-structure by default. The data in the hash-table
+      needs to be pulled into another data-structure before it can be sorted, whereas the
+      tree’s structure is sorted by default, only needing to be traversed properly to return
+      a sorted list. A hash-table also works better when having a finite amount of data to
+      input. While there may be a finite number of courses in the catalog, new courses may 
+      in theory be added in the future to the point where the hash-table needs to increase
+      its size (or deal with the collisions), whereas the tree can be indefinitely added to
+      (though should ideally be kept as balanced as possible). 
