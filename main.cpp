@@ -1,7 +1,6 @@
 //Justin M Taylor
 //Professor Atkison
 //CS-300 Project 2
-//8-14-2022
 
 #include <iostream>
 #include <string>
